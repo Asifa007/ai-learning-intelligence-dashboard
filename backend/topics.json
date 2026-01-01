@@ -1,26 +1,18 @@
 [
   {
-    "id": 1767282263928,
+    "id": 1767291492869,
     "topic": "NLP",
     "status": "Completed",
     "difficulty": "Medium",
     "priority": "High",
-    "notes": "check on youtube\n"
-  },
-  {
-    "id": 1767282818153,
-    "topic": "linear regression",
-    "status": "Completed",
-    "priority": "Medium",
-    "difficulty": "Hard",
     "notes": "online course"
   },
   {
-    "id": 1767284243951,
-    "topic": "deep learning",
+    "id": 1767291587218,
+    "topic": "Deep Learning",
     "status": "Completed",
+    "difficulty": "Hard",
     "priority": "High",
-    "difficulty": "Medium",
-    "notes": "emc"
+    "notes": "youtube"
   }
 ]
