@@ -74,15 +74,17 @@ ai-learning-intelligence-dashboard/
 git clone https://github.com/Asifa007/ai-learning-intelligence-dashboard.git
 ```
 2️⃣ Start Backend
+```
 cd backend
 npm install
 node server.js
-
+```
 3️⃣ Start Frontend
+```
 cd frontend
 npm install
 npm run dev
-
+```
 
 The app will run at:
 
