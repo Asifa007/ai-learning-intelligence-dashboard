@@ -1,0 +1,236 @@
+body {
+  margin: 0;
+  background: #020617;
+  color: #e5e7eb;
+  font-family: "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e5e7eb;
+}
+
+/* ===== MAIN AI CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+  animation: aiFadeIn 0.8s ease-out;
+}
+
+/* ===== TITLE ===== */
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #38bdf8;
+  letter-spacing: 1px;
+}
+
+/* AI thinking text */
+.ai-thinking {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+/* ===== FORM ===== */
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) auto;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(2,6,23,0.8);
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.primary {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: #020617;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+  animation: aiPulse 2.5s infinite;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(99, 102, 241, 0.9);
+}
+
+.edit {
+  background: #facc15;
+  color: #020617;
+  margin-right: 6px;
+}
+
+.delete {
+  background: #ef4444;
+  color: white;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+th {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 12px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+tr:hover {
+  background: linear-gradient(
+    120deg,
+    rgba(56, 189, 248, 0.08),
+    rgba(99, 102, 241, 0.08),
+    rgba(56, 189, 248, 0.08)
+  );
+  background-size: 200% 100%;
+  animation: scanGlow 1.5s linear infinite;
+}
+
+/* ===== STATUS BADGES ===== */
+.status {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.status:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 12px currentColor;
+}
+
+.status.Not\ Started {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.status.In\ Progress {
+  background: rgba(250, 204, 21, 0.2);
+  color: #fde047;
+}
+
+.status.Completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes aiFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aiPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  }
+}
+
+@keyframes scanGlow {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 200%;
+  }
+}
+/* ===== AI RECOMMENDATION PANEL ===== */
+.ai-recommendation {
+  margin-bottom: 25px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(56, 189, 248, 0.15),
+    rgba(99, 102, 241, 0.15)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 14px;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+  animation: aiFadeIn 1s ease-out;
+}
+.recommendation {
+  margin: 20px 0;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #00eaff;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(0, 234, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(0, 234, 255, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(0, 234, 255, 0.3); }
+}
+
+.ai-thinking {
+  color: #8fd3f4;
+  margin-bottom: 10px;
+  font-style: italic;
+}
