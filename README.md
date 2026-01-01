@@ -70,8 +70,8 @@ ai-learning-intelligence-dashboard/
 ## ▶️ How to Run the Project Locally
 
 1️⃣ Clone the repository
-```bash
 git clone https://github.com/Asifa007/ai-learning-intelligence-dashboard.git
+
 2️⃣ Start Backend
 cd backend
 npm install
