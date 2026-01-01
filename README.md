@@ -69,28 +69,28 @@ ai-learning-intelligence-dashboard/
 
 ## ▶️ How to Run the Project Locally
 
-###1️⃣ Clone the repository
+### 1️⃣ Clone the repository
 ```
 git clone https://github.com/Asifa007/ai-learning-intelligence-dashboard.git
 ```
-###2️⃣ Start Backend
+### 2️⃣ Start Backend
 ```
 cd backend
 npm install
 node server.js
 ```
-###3️⃣ Start Frontend
+### 3️⃣ Start Frontend
 ```
 cd frontend
 npm install
 npm run dev
 ```
 
-###The app will run at:
+### The app will run at:
 
 http://localhost:5173
 
-##💡 Project Purpose
+## 💡 Project Purpose
 
 This project was built to demonstrate:
 
@@ -106,7 +106,7 @@ Clean UI/UX design
 
 GitHub project workflow
 
-##🔮 Future Improvements
+## 🔮 Future Improvements
 
 Real AI recommendation logic
 
@@ -118,7 +118,7 @@ Database integration (MongoDB)
 
 Cloud deployment
 
-###👩‍💻 Author
+### 👩‍💻 Author
 
 Asifa Firdhouse F
 
