@@ -1,4 +1,4 @@
-# 🧠 AI Learning Intelligence Dashboard
+# 🧠 AI Learning Progress Dashboard
 
 A modern **AI-inspired full-stack dashboard** to track, manage, and analyze learning progress across Artificial Intelligence topics.
 
