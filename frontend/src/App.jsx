@@ -1,10 +1,26 @@
 import { useEffect, useState } from "react";
-import api from "./api.js";
 import Form from "./components/form.jsx";
 import List from "./components/list.jsx";
 import Recommendation from "./components/Recommendation.jsx";
 import "./index.css";
 
+/* ===============================
+   Local Storage Helpers
+================================ */
+const STORAGE_KEY = "ai-learning-topics";
+
+const loadTopics = () => {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  return saved ? JSON.parse(saved) : [];
+};
+
+const saveTopics = (topics) => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(topics));
+};
+
+/* ===============================
+   App Component
+================================ */
 function App() {
   const [data, setData] = useState([]);
   const [form, setForm] = useState({
@@ -16,28 +32,37 @@ function App() {
   });
   const [editId, setEditId] = useState(null);
 
+  /* Load data once on app start */
   useEffect(() => {
-    fetchData();
+    setData(loadTopics());
   }, []);
 
-  const fetchData = async () => {
-    const res = await api.get("/topics");
-    setData(res.data);
-  };
-
+  /* Handle form input change */
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async () => {
+  /* Add / Update topic */
+  const handleSubmit = () => {
     if (!form.topic) return;
 
+    let updatedData;
+
     if (editId) {
-      await api.put(`/topics/${editId}`, form);
+      updatedData = data.map((item) =>
+        item.id === editId ? { ...form, id: editId } : item
+      );
       setEditId(null);
     } else {
-      await api.post("/topics", form);
+      const newItem = {
+        ...form,
+        id: Date.now()
+      };
+      updatedData = [...data, newItem];
     }
+
+    setData(updatedData);
+    saveTopics(updatedData);
 
     setForm({
       topic: "",
@@ -46,18 +71,19 @@ function App() {
       priority: "Low",
       notes: ""
     });
-
-    fetchData();
   };
 
+  /* Edit topic */
   const handleEdit = (item) => {
     setEditId(item.id);
     setForm(item);
   };
 
-  const handleDelete = async (id) => {
-    await api.delete(`/topics/${id}`);
-    fetchData();
+  /* Delete topic */
+  const handleDelete = (id) => {
+    const updatedData = data.filter((item) => item.id !== id);
+    setData(updatedData);
+    saveTopics(updatedData);
   };
 
   return (
